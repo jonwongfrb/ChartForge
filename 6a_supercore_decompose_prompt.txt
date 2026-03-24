@@ -1,0 +1,38 @@
+You are tasked with reproducing the Federal Reserve's "Contributions to Supercore PCE Inflation" stacked area chart (chart ID: 06_supercore_decomp) using Python and Matplotlib. Follow these instructions exactly to ensure precise replication.
+
+I have provided two critical files as attachments:
+1. A complete metadata specification file in JSON format that describes the visual style, chart structure, and all visualization parameters
+2. The actual dataset containing the PCE inflation component data needed for the chart
+
+Your goal is to create Python code that precisely reproduces this chart according to the specifications in the metadata, using the provided dataset.
+
+SPECIFIC REQUIREMENTS:
+
+1. Use the EXACT data from the provided dataset file - do not generate synthetic data.
+
+2. Create a stacked area chart showing all four components (Housing Services, Other Services, Non-Housing Services, Core Goods) according to the component definitions in the metadata.
+
+3. Add the total Supercore PCE line on top of the stacked areas.
+
+4. Include recession shading for the periods specified in the metadata.
+
+5. Add all text annotations exactly as specified in the metadata.
+
+6. Format the axes, labels, and tick marks according to the metadata specifications.
+
+7. Apply all style parameters exactly as specified in the metadata, including colors, fonts, dimensions, and alpha values.
+
+8. Include appropriate comments in your code to explain key implementation details.
+
+9. The final output should be saved as a high-resolution PNG file that could be used in an economic research publication.
+
+10. If there are any data processing steps required (such as calculations, transformations, or filtering), perform those operations exactly as described in the reproduction steps of the metadata.
+
+DELIVERABLES:
+
+1. Complete Python code that reproduces the chart
+2. Brief explanation of how the code implements the specifications from the metadata
+3. Instructions for running the code and any required dependencies
+4. Any issues or ambiguities encountered and how they were resolved
+
+Remember, the goal is to create an EXACT visual match to the Federal Reserve's original chart based on the provided specifications and data. Do not deviate from the metadata or add features not specified in the metadata.

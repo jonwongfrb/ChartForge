@@ -1,0 +1,291 @@
+{
+  "chart_identity": {
+    "chart_id": "06_supercore_decomp",
+    "chart_type": "stacked_area_chart",
+    "title": "Contributions to Supercore PCE Inflation",
+    "subtitle": "Year-over-Year Percent Change",
+    "description": "Decomposition of supercore PCE inflation showing contributions of key components",
+    "version": "1.0",
+    "created_by": "Economic Analysis Team",
+    "last_updated": "2023-11-15"
+  },
+  "data_configuration": {
+    "data_source": {
+      "primary_source": "Bureau of Economic Analysis",
+      "dataset": "Personal Consumption Expenditures",
+      "frequency": "Monthly",
+      "seasonally_adjusted": true,
+      "transformation": "Year-over-Year Percentage Change"
+    },
+    "components": [
+      {
+        "id": "housing_services",
+        "name": "Housing Services",
+        "order": 1,
+        "color": "#1f77b4"
+      },
+      {
+        "id": "other_services",
+        "name": "Other Services",
+        "order": 2,
+        "color": "#ff7f0e"
+      },
+      {
+        "id": "non_housing_services",
+        "name": "Non-Housing Services",
+        "order": 3,
+        "color": "#2ca02c"
+      },
+      {
+        "id": "core_goods",
+        "name": "Core Goods",
+        "order": 4,
+        "color": "#d62728"
+      }
+    ],
+    "line_series": [
+      {
+        "id": "supercore_total",
+        "name": "Supercore PCE",
+        "color": "#000000",
+        "width": 2,
+        "style": "solid"
+      }
+    ]
+  },
+  "visual_style": {
+    "dimensions": {
+      "width": 1200,
+      "height": 800,
+      "dpi": 300,
+      "aspect_ratio": 1.5
+    },
+    "fonts": {
+      "title": {
+        "family": "Arial",
+        "size": 16,
+        "weight": "bold"
+      },
+      "subtitle": {
+        "family": "Arial",
+        "size": 14,
+        "weight": "normal"
+      },
+      "axis_labels": {
+        "family": "Arial",
+        "size": 12,
+        "weight": "normal"
+      },
+      "tick_labels": {
+        "family": "Arial",
+        "size": 10,
+        "weight": "normal"
+      },
+      "legend": {
+        "family": "Arial",
+        "size": 10,
+        "weight": "normal"
+      },
+      "annotations": {
+        "family": "Arial",
+        "size": 10,
+        "weight": "normal",
+        "italic": true
+      }
+    },
+    "colors": {
+      "background": "#ffffff",
+      "grid": "#e5e5e5",
+      "zero_line": "#000000",
+      "annotation": "#555555",
+      "recession_shading": "#e6e6e6"
+    },
+    "layout": {
+      "margin_top": 0.1,
+      "margin_right": 0.1,
+      "margin_bottom": 0.15,
+      "margin_left": 0.1,
+      "title_spacing": 0.02,
+      "legend_location": "upper right"
+    }
+  },
+  "axes_configuration": {
+    "x_axis": {
+      "type": "date",
+      "label": "",
+      "limit": {
+        "min": "2019-01-01",
+        "max": "auto"
+      },
+      "tick_format": "%b\n%Y",
+      "tick_interval": "6M",
+      "grid": true,
+      "grid_style": "dotted",
+      "grid_alpha": 0.3
+    },
+    "y_axis": {
+      "label": "Percentage Points",
+      "position": "left",
+      "limit": {
+        "min": -2.0,
+        "max": 5.0
+      },
+      "tick_interval": 1.0,
+      "tick_format": "{:.0f}%",
+      "grid": true,
+      "grid_style": "dotted",
+      "grid_alpha": 0.3,
+      "zero_line": true,
+      "zero_line_width": 1.0
+    }
+  },
+  "annotations_features": {
+    "annotations": [
+      {
+        "type": "text",
+        "text": "Pre-pandemic\nContributions",
+        "x_position": "2023-01-01",
+        "y_position": 3.5,
+        "color": "#000000",
+        "font_weight": "bold",
+        "font_size": 10
+      },
+      {
+        "type": "text",
+        "text": "Housing Services",
+        "x_position": "2022-06-01",
+        "y_position": 1.2,
+        "color": "#1f77b4",
+        "font_weight": "bold",
+        "font_size": 10
+      },
+      {
+        "type": "text",
+        "text": "Core Goods",
+        "x_position": "2022-03-01",
+        "y_position": 3.8,
+        "color": "#d62728",
+        "font_weight": "bold",
+        "font_size": 10
+      },
+      {
+        "type": "text",
+        "text": "Other Services",
+        "x_position": "2022-09-01",
+        "y_position": 2.5,
+        "color": "#ff7f0e",
+        "font_weight": "bold",
+        "font_size": 10
+      }
+    ],
+    "recession_shading": {
+      "enabled": true,
+      "periods": [
+        {
+          "start": "2020-02-01",
+          "end": "2020-04-01"
+        },
+        {
+          "start": "2007-12-01",
+          "end": "2009-06-01"
+        }
+      ],
+      "style": {
+        "color": "#e6e6e6",
+        "alpha": 0.8,
+        "zorder": -1
+      }
+    }
+  },
+  "legend_configuration": {
+    "show": true,
+    "location": "upper right",
+    "frame": false,
+    "columns": 1,
+    "font_size": 10,
+    "marker_scale": 1.0,
+    "label_spacing": 0.5
+  },
+  "data_schema": {
+    "date": {
+      "type": "date",
+      "format": "%Y-%m-%d",
+      "role": "index"
+    },
+    "housing_services_contribution": {
+      "type": "float",
+      "unit": "percentage_points",
+      "description": "Contribution of housing services to supercore inflation"
+    },
+    "other_services_contribution": {
+      "type": "float",
+      "unit": "percentage_points",
+      "description": "Contribution of other services to supercore inflation"
+    },
+    "non_housing_services_contribution": {
+      "type": "float",
+      "unit": "percentage_points",
+      "description": "Contribution of non-housing services to supercore inflation"
+    },
+    "core_goods_contribution": {
+      "type": "float",
+      "unit": "percentage_points",
+      "description": "Contribution of core goods to supercore inflation"
+    },
+    "supercore_total": {
+      "type": "float",
+      "unit": "percentage_points",
+      "description": "Total year-over-year supercore PCE inflation",
+      "calculation": "sum of all component contributions"
+    }
+  },
+  "sample_data": [
+    {"date": "2019-01-01", "housing_services_contribution": 0.8, "other_services_contribution": 0.5, "non_housing_services_contribution": 0.6, "core_goods_contribution": 0.3, "supercore_total": 2.2},
+    {"date": "2019-02-01", "housing_services_contribution": 0.9, "other_services_contribution": 0.4, "non_housing_services_contribution": 0.5, "core_goods_contribution": 0.3, "supercore_total": 2.1},
+    {"date": "2023-01-01", "housing_services_contribution": 2.1, "other_services_contribution": 1.0, "non_housing_services_contribution": 0.4, "core_goods_contribution": -0.3, "supercore_total": 3.2}
+  ],
+  "matplotlib_params": {
+    "figure_style": "seaborn-v0_8-whitegrid",
+    "use_date_locator": true,
+    "date_locator_type": "MonthLocator",
+    "date_locator_interval": 3,
+    "date_formatter": "%b\n'%y",
+    "stacked_area_alpha": 0.8,
+    "stacked_area_edge_color": "#ffffff",
+    "stacked_area_edge_width": 0.5,
+    "stacked_area_interpolation": "linear",
+    "line_series_zorder": 10
+  },
+  "interactive_features": {
+    "tooltip": {
+      "enabled": true,
+      "format": "{date:%b %Y}: {component}: {value:.1f}%"
+    },
+    "component_toggle": {
+      "enabled": true,
+      "default_state": "all_visible"
+    },
+    "time_slider": {
+      "enabled": true,
+      "default_range": {
+        "start": "2019-01-01",
+        "end": "2023-01-01"
+      }
+    },
+    "data_download": {
+      "enabled": true,
+      "formats": ["csv", "excel", "json"]
+    }
+  },
+  "reproduction_steps": [
+    "Load monthly PCE component data from BEA",
+    "Calculate year-over-year percentage changes for each component",
+    "Calculate contribution to supercore inflation using component weights",
+    "Create stacked area chart with component contributions",
+    "Add total supercore line series on top of stacked areas",
+    "Apply recession shading for NBER recession dates",
+    "Add component labels directly on the chart",
+    "Format axes with percentage formatting",
+    "Add pre-pandemic annotation reference"
+  ]
+}
